@@ -63,9 +63,14 @@
         $sql = "SELECT * FROM Admin";
         $result = mysqli_query($mysqli, $sql);
         $admin = mysqli_fetch_assoc($result);
+        if ($_POST) {
+        function update_pesan($mysqli, $sql, $subjek, $pesan) {
+          mysqli_query($mysqli, "INSERT INTO pesan (subjek , pesan)  VALUES ('$subjek', '$pesan');");
+        }
         $subjek = $_POST['subjek'];
         $pesan = $_POST['pesan'];
-        update_admin()
+        update_pesan($mysqli, $sql, $subjek, $pesan);
+      }
         ?>
         <p>Profil Admin</p>
         <img src="admin/<?php echo $admin['image'] ?>" alt="admin" /> </br>
@@ -78,9 +83,10 @@
 
       <p>Pemesanan</p>
       <form method="post" enctype="multipart/form-data">
-        <p>Subjek : <input type="text" name="subjek" value=""></p>
-        <p>Pesan  : <input type="text" name="pesan" value=""></p>
-        <input type="submit" name="pesan" value="kirim">
+        <?php $sql = "INSERT INTO pesan"; ?>
+        <p>Subjek : <input type="text" name="subjek"></p>
+        <p>Pesan  : <input type="text" name="pesan"></p>
+        <input type="submit" name="name" value="kirim">
       </form>
       <p><a href="#beranda"><br><br><br>paling atas</a></p>
     </div>

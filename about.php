@@ -52,6 +52,6 @@
       <br>Semoga anda juga merupakan salah satu pendukung perusahaan kami.
     </p>
     <img src="image/gulag.png" alt="" />
-    <p id="back"> <a href="beranda.php"> kembali ke beranda</a></p>
+    <p id="back"> <a href="index.php"> kembali ke beranda</a></p>
   </body>
 </html>

@@ -46,7 +46,7 @@
 
     ?>
     <p>Profil Admin</p>
-    <span><a href="../beranda.php">beranda</a></span>
+    <span><a href="../index.php">beranda</a></span>
     <span><a href="logout.php">logout</a></span> </br>
     <img src="<?php echo $admin['image']?>" alt="" />
     <form method="post" action="" enctype="multipart/form-data">
@@ -56,6 +56,7 @@
       <p>fullname : <input type="text" name="fullname" value="<?php echo $admin['fullname']?>"></p>
       <p>email : <input type="text" name="email" value="<?php echo $admin['email']?>"></p>
       <input type="submit" name="update" value="update">
-    </form>\
+      <?php  ?>
+    </form>
   </body>
 </html>
