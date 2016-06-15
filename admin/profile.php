@@ -47,6 +47,7 @@
     ?>
     <p>Profil Admin</p>
     <span><a href="../index.php">beranda</a></span>
+    <span><a href="inbox.php">inbox</a></span>
     <span><a href="logout.php">logout</a></span> </br>
     <img src="<?php echo $admin['image']?>" alt="" />
     <form method="post" action="" enctype="multipart/form-data">

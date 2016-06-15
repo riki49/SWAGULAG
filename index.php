@@ -85,7 +85,7 @@
       <form method="post" enctype="multipart/form-data">
         <?php $sql = "INSERT INTO pesan"; ?>
         <p>Subjek : <input type="text" name="subjek"></p>
-        <p>Pesan  : <input type="text" name="pesan"></p>
+        <p>Pesan  : <textarea name="pesan" rows="8" cols="40"></textarea></p>
         <input type="submit" name="name" value="kirim">
       </form>
       <p><a href="#beranda"><br><br><br>paling atas</a></p>
