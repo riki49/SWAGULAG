@@ -1,3 +1,7 @@
+<?php
+session_start();
+session_destroy();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +20,6 @@
     <img  src="image/5.png" alt="logo" class="logo"/>
     <header class="header">GULAG</header>
   </div>
-
   <!-- menu bar -->
   <div class="menu-wrap">
   <ul>
@@ -65,7 +68,7 @@
         $admin = mysqli_fetch_assoc($result);
         if ($_POST) {
         function update_pesan($mysqli, $sql, $subjek, $pesan) {
-          mysqli_query($mysqli, "INSERT INTO pesan (subjek , pesan)  VALUES ('$subjek', '$pesan');");
+          mysqli_query($mysqli, "INSERT INTO pesan (subjek , pesan, status)  VALUES ('$subjek', '$pesan', 'belum dibaca');");
         }
         $subjek = $_POST['subjek'];
         $pesan = $_POST['pesan'];

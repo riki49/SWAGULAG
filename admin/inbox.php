@@ -14,30 +14,46 @@ if (!$_SESSION) {
   </head>
   <body>
     <p>Pesan Masuk</p>
+    <p><a href="profile.php">kembali</a></p>
     <?php
+      require_once '../func.php';
         $mysqli = mysqli_connect("127.0.0.1", "root", "", "uas");
         $sql = "SELECT * FROM pesan";
         $result = mysqli_query($mysqli, $sql);
-    ?>
-    <table style="width:100%">
 
+        if($_POST){
+          echo "ok";
+          // mysqli_query($mysqli, "UPDATE admin SET status='sudah' WHERE id=$admin['id'];");
+          redirectTo('http://localhost/riki_mustofa_uas/admin/inbox.php');
+        }
+    ?>
+    <table style="width:100%" border="1px">
       <tr>
-        <td>
-          <span class="id">id</span>
+        <td height="27" align="center" valign="middle">
+          id
         </td>
-        <td>
-          <span class="subjek">Subjek</span>
+        <td height="27" align="center" valign="middle">
+          Subjek
         </td>
-        <td>
-          <span class="pesan">Pesan</span>
+        <td height="27" align="center" valign="middle">
+          Pesan
+        </td>
+        <td height="27" align="center" valign="middle">
+          Status
         </td>
       </tr>
 
       <?php while ($admin = mysqli_fetch_assoc($result)) : ?>
             <tr>
-              <td><?php echo $admin['id'] ?></td>
-              <td><?php echo $admin['subjek']?></td>
-              <td><?php echo $admin['pesan']?></td>
+              <td height="27" align="left" valign="middle"><?php echo $admin['id'] ?></td>
+              <td height="27" align="left" valign="middle"><?php echo $admin['subjek']?></td>
+              <td height="27" align="left" valign="middle"><?php echo $admin['pesan']?></td>
+              <td height="27" align="left" valign="middle"><?php if($admin['status'] == 'belum dibaca') {
+                echo $admin['status'];
+              } else {
+                echo "sudah dibaca";
+              }?></td>
+              <td height="27" align="left" valign="middle"><a href="baca.php?id=<?php echo $admin['id'] ?>">baca</a></td>
             </tr>
       <?php endwhile ?>
     </table>

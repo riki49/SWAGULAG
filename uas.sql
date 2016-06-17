@@ -15,5 +15,6 @@ VALUES ('admin.jpg', 'root', 'root', 'John Doe', 'Johndoe@email.com');
 CREATE TABLE pesan (
   id TINYINT PRIMARY KEY AUTO_INCREMENT,
   subjek TEXT,
-  pesan TEXT
+  pesan TEXT,
+  status VARCHAR(15)
 );
